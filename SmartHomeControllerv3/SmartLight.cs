@@ -43,5 +43,12 @@ namespace SmartHomeController
             this.Colour = colour;
             Console.WriteLine($"Colour now set to {Colour}");
         }
+        // In the subclasses it is override instead of virtual
+        public override void GetStatus()
+        {
+            base.GetStatus(); // base reffers to smart device
+            Console.WriteLine("This is a smart light");
+            Console.WriteLine($"Brightness: {Brightness}, Color: {Colour}");
+        }
     }
 }
